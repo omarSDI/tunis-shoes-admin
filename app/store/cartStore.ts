@@ -1,0 +1,109 @@
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+}
+
+export interface CartItem extends Product {
+  lineId: string;
+  quantity: number;
+  size?: number;
+  color?: string;
+}
+
+interface CartStore {
+  items: CartItem[];
+  isOpen: boolean;
+  addItem: (product: Product, opts?: { size?: number; color?: string }) => void;
+  removeItem: (lineId: string) => void;
+  updateQuantity: (lineId: string, quantity: number) => void;
+  clearCart: () => void;
+  getTotalItems: () => number;
+  getTotalPrice: () => number;
+  openCart: () => void;
+  closeCart: () => void;
+  toggleCart: () => void;
+}
+
+function makeLineId(productId: string, size?: number, color?: string) {
+  return `${productId}::${size ?? ''}::${color ?? ''}`;
+}
+
+export const useCartStore = create<CartStore>()(
+  persist(
+    (set, get) => ({
+      items: [],
+      isOpen: false,
+
+      addItem: (product, opts) => {
+        const size = opts?.size;
+        const color = opts?.color;
+        const lineId = makeLineId(product.id, size, color);
+
+        const items = get().items;
+        const existingItem = items.find((item) => item.lineId === lineId);
+
+        if (existingItem) {
+          set({
+            items: items.map((item) =>
+              item.lineId === lineId
+                ? { ...item, quantity: item.quantity + 1 }
+                : item
+            ),
+          });
+          return;
+        }
+
+        set({
+          items: [
+            ...items,
+            { ...product, lineId, quantity: 1, size, color } as CartItem,
+          ],
+        });
+      },
+
+      removeItem: (lineId: string) => {
+        set({
+          items: get().items.filter((item) => item.lineId !== lineId),
+        });
+      },
+
+      updateQuantity: (lineId: string, quantity: number) => {
+        if (quantity <= 0) {
+          get().removeItem(lineId);
+          return;
+        }
+
+        set({
+          items: get().items.map((item) =>
+            item.lineId === lineId ? { ...item, quantity } : item
+          ),
+        });
+      },
+
+      clearCart: () => set({ items: [] }),
+
+      getTotalItems: () => {
+        return get().items.reduce((total, item) => total + item.quantity, 0);
+      },
+
+      getTotalPrice: () => {
+        return get().items.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
+      },
+
+      openCart: () => set({ isOpen: true }),
+      closeCart: () => set({ isOpen: false }),
+      toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
+    }),
+    {
+      name: 'tunisshoes-cart',
+      partialize: (state) => ({ items: state.items }),
+    }
+  )
+);
