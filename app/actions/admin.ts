@@ -23,7 +23,7 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     try {
         const session = await verifyAdminSession();
         if (!session) {
-            return { totalSales: 0, totalOrders: 0, totalProducts: 0, pendingOrders: 0, orders: [] };
+            return { totalSales: 0, totalOrders: 0, totalProducts: 0, pendingOrders: 0, orders: [], totalProfit: 0 };
         }
 
         const supabase = createServerClient();
@@ -46,7 +46,7 @@ export async function getDashboardStats(): Promise<DashboardStats> {
         if (ordersError) {
             console.error('getDashboardStats: Error fetching orders:', ordersError.message, ordersError.details);
             // Fallback: returns empty stats but keeps whatever products count we got
-            return { totalSales: 0, totalOrders: 0, totalProducts: productCount || 0, pendingOrders: 0, orders: [] };
+            return { totalSales: 0, totalOrders: 0, totalProducts: productCount || 0, pendingOrders: 0, orders: [], totalProfit: 0 };
         }
 
         const orders = (dbOrders || []).map((o: any) => {
@@ -92,10 +92,10 @@ export async function getDashboardStats(): Promise<DashboardStats> {
             pendingOrders,
             orders,
             totalProfit: Number(totalProfit.toFixed(2)), // Added for the new UI
-        } as any;
+        };
     } catch (error) {
         console.error('getDashboardStats: Critical Error:', error);
-        return { totalSales: 0, totalOrders: 0, totalProducts: 0, pendingOrders: 0, orders: [] };
+        return { totalSales: 0, totalOrders: 0, totalProducts: 0, pendingOrders: 0, orders: [], totalProfit: 0 };
     }
 }
 

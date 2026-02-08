@@ -50,6 +50,7 @@ export interface DashboardStats {
     totalProducts: number;
     pendingOrders: number;
     orders: Order[];
+    totalProfit: number;
 }
 
 export interface CreateProductInput {
