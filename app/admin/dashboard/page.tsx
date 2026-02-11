@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getDashboardStats, getSalesChartData } from '@/app/actions/admin';
 import { getAllOrders } from '../../actions/orders';
 import DashboardClient from './DashboardClient';
