@@ -6,7 +6,7 @@ export const config = {
     matcher: '/admin/:path*',
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const isAdminPath = request.nextUrl.pathname.startsWith('/admin');
     const isLoginPath = request.nextUrl.pathname === '/admin/login';
 
