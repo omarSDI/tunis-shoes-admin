@@ -69,13 +69,19 @@ USING (true) WITH CHECK (true);
 
 DROP POLICY IF EXISTS "Admin full access on products" ON products;
 DROP POLICY IF EXISTS "Products are viewable by everyone" ON products;
+DROP POLICY IF EXISTS "Authenticated users can manage products" ON products;
 
--- Public can view products
+-- Public can view products (for the shop)
 CREATE POLICY "Public views products" ON products
 FOR SELECT TO anon, authenticated
 USING (true);
 
--- Only service_role can modify (via admin API)
+-- Authenticated users can manage products (for Supabase dashboard)
+CREATE POLICY "Authenticated users can manage products" ON products
+FOR ALL TO authenticated
+USING (true) WITH CHECK (true);
+
+-- Service_role can also manage products (for admin API)
 CREATE POLICY "Service role manages products" ON products
 FOR ALL TO service_role
 USING (true) WITH CHECK (true);
@@ -84,7 +90,8 @@ USING (true) WITH CHECK (true);
 -- 5. ENSURE PERMISSIONS
 -- ============================================================================
 
-GRANT SELECT ON TABLE public.products TO anon, authenticated;
+GRANT SELECT ON TABLE public.products TO anon;
+GRANT ALL ON TABLE public.products TO authenticated, service_role;
 GRANT INSERT, SELECT ON TABLE public.orders TO anon, authenticated;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO anon, authenticated, service_role;
 
