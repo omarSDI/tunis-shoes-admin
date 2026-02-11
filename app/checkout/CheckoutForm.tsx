@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useCartStore } from '../store/cartStore';
 import { createOrder } from '@/app/actions/orders';
 import { ShoppingBag, Lock, CheckCircle } from 'lucide-react';
+
 export default function CheckoutForm() {
   const router = useRouter();
   const items = useCartStore((s) => s.items);
@@ -31,21 +32,24 @@ export default function CheckoutForm() {
     'Tataouine', 'Tozeur', 'Tunis', 'Zaghouan'
   ];
 
-  const canSubmit = useMemo(() => {
-    return (
-      items.length > 0 &&
-      name.trim().length >= 2 &&
-      phone.trim().length >= 8 &&
-      street.trim().length >= 5 &&
-      city.trim().length >= 2 &&
-      governorate !== ''
-    );
-  }, [items.length, name, phone, street, city, governorate]);
-
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setSuccess(null);
+
+    // Validation checks with clear messages
+    const validationErrors = [];
+    if (name.trim().length < 2) validationErrors.push("Name is too short");
+    if (phone.trim().length < 8) validationErrors.push("Phone number must be at least 8 digits");
+    if (street.trim().length < 3) validationErrors.push("Street address is too short");
+    if (city.trim().length < 2) validationErrors.push("City name is too short");
+    if (governorate === '') validationErrors.push("Please select a governorate");
+
+    if (validationErrors.length > 0) {
+      setError(validationErrors.join('. '));
+      return;
+    }
+
     closeCart();
 
     const fullAddress = `${street.trim()}, ${city.trim()}, ${governorate}`;
@@ -206,7 +210,7 @@ export default function CheckoutForm() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            disabled={!canSubmit || isPending}
+            disabled={isPending}
             className="w-full py-4 px-6 bg-gradient-to-r from-[#001f3f] to-[#001f3f] hover:from-[#d4af37] hover:to-[#b8941e] text-white hover:text-[#001f3f] rounded-lg font-bold transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
           >
             {isPending ? (
