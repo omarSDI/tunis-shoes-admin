@@ -13,7 +13,7 @@ export const translations = {
         // Hero
         heroTitle: 'Elevate Your',
         heroReview: 'Walk',
-        heroSubtitle: 'Discover premium quality footwear designed for style and comfort. Step into excellence with TunisShoes.',
+        heroSubtitle: 'Discover premium quality footwear designed for style and comfort. Step into excellence with LuxeShopy.',
         shopNow: 'Shop Now',
         exploreCollection: 'Explore Collection',
         premiumFootwear: 'Premium Footwear',
@@ -100,6 +100,9 @@ export const translations = {
         confirmPassword: 'Confirm Password',
         themeSettings: 'Theme Settings',
         languageSettings: 'Language Settings',
+        theme: 'Theme',
+        light: 'Light',
+        dark: 'Dark',
 
         // Customers
         customerName: 'Customer Name',
@@ -137,13 +140,14 @@ export const translations = {
         shop: 'Boutique',
         men: 'Hommes',
         women: 'Femmes',
+        contact: 'Contact',
         search: 'Rechercher',
         cart: 'Panier',
 
         // Hero
         heroTitle: 'Élevez Votre',
         heroReview: 'Marche',
-        heroSubtitle: 'Découvrez des chaussures de qualité premium conçues pour le style et le confort. L\'excellence avec TunisShoes.',
+        heroSubtitle: 'Découvrez des chaussures de qualité premium conçues pour le style et le confort. L\'excellence avec LuxeShopy.',
         shopNow: 'Acheter',
         exploreCollection: 'Voir la Collection',
         premiumFootwear: 'Chaussures Premium',
@@ -255,12 +259,23 @@ export const translations = {
         quantity: 'Quantité',
         unitPrice: 'Prix Unitaire',
         amount: 'Montant',
+
+        // Contact
+        contactUs: 'Contactez-nous',
+        name: 'Nom',
+        email: 'Email',
+        message: 'Message',
+        send: 'Envoyer',
+        sending: 'Envoi...',
+        success: 'Message envoyé avec succès !',
+        error: 'Erreur lors de l\'envoi du message.',
     },
     ar: {
         // Navbar
         shop: 'المتجر',
         men: 'رجال',
         women: 'نساء',
+        contact: 'اتصل بنا',
         search: 'بحث',
         cart: 'السلة',
 
@@ -379,5 +394,15 @@ export const translations = {
         quantity: 'الكمية',
         unitPrice: 'سعر الوحدة',
         amount: 'المبلغ',
+
+        // Contact
+        contactUs: 'اتصل بنا',
+        name: 'الاسم',
+        email: 'البريد الإلكتروني',
+        message: 'الرسالة',
+        send: 'إرسال',
+        sending: 'جاري الإرسال...',
+        success: 'تم إرسال الرسالة بنجاح!',
+        error: 'خطأ في إرسال الرسالة.',
     }
 };
