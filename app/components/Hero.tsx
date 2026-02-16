@@ -11,7 +11,7 @@ export default function Hero() {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const heroImage = "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=1200";
+  const heroImage = "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&q=80&w=1200";
   return (
     <section className="relative w-full bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a] to-[#1a1a1a] overflow-hidden">
       {/* Circuit Board Pattern Overlay */}
@@ -106,7 +106,7 @@ export default function Hero() {
                     alt="High-End Smartwatch"
                     onLoad={() => setImageLoaded(true)}
                     onError={() => setImageError(true)}
-                    className={`max-w-[85%] max-h-[85%] object-contain drop-shadow-[0_35px_35px_rgba(212,175,55,0.4)] transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    className="max-w-[85%] max-h-[85%] object-contain drop-shadow-[0_35px_35px_rgba(212,175,55,0.5)] transition-opacity duration-700 opacity-100"
                   />
                 </motion.div>
               ) : (
