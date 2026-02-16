@@ -49,19 +49,7 @@ export default function Logo3D() {
             }}
             className="relative h-12 w-48 sm:h-16 sm:w-64 cursor-pointer"
         >
-            <div
-                style={{
-                    transform: "translateZ(50px)",
-                    transformStyle: "preserve-3d",
-                }}
-                className="absolute inset-0 flex items-center justify-center"
-            >
-                <img
-                    src="https://framerusercontent.com/images/8rUeM8j8f8f8f8f8f8f8f8f8f.png" // Placeholder, in a real scenario we'd use the uploaded asset or local path
-                    alt="LuxeShopy Logo"
-                    className="h-full w-full object-contain filter drop-shadow-2xl"
-                />
-            </div>
+
             {/* The user provided a logo in the chat, I will use a stylized text + icon approach if I can't directly use the image as a URL easily, or I'll assume they'll replace the source. Actually, I can use the logo text and styling from the image. */}
             <div
                 style={{
