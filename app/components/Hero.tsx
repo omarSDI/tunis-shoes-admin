@@ -95,9 +95,9 @@ export default function Hero() {
                 style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?q=80&w=1200"
+                  src="https://images.unsplash.com/photo-1508685096489-7aac291ba597?q=80&w=1200"
                   alt="High-End Smartwatch"
-                  className="max-w-[80%] max-h-[80%] object-contain drop-shadow-[0_35px_35px_rgba(212,175,55,0.3)]"
+                  className="max-w-[80%] max-h-[80%] object-contain drop-shadow-[0_35px_35px_rgba(212,175,55,0.4)]"
                 />
               </motion.div>
 
