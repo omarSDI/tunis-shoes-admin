@@ -78,7 +78,7 @@ export default function AdminSidebar() {
                 className="text-xl font-bold text-[#d4af37]"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
-                TunisShoes
+                LuxeShopy
                 <span className="block text-white text-sm font-normal mt-1">Admin Panel</span>
               </h2>
             )}

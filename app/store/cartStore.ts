@@ -102,7 +102,7 @@ export const useCartStore = create<CartStore>()(
       toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
     }),
     {
-      name: 'tunisshoes-cart',
+      name: 'luxeshopy-cart',
       partialize: (state) => ({ items: state.items }),
     }
   )

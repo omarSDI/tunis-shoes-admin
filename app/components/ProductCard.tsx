@@ -49,7 +49,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Image Container with Hover Zoom */}
-          <div className="relative w-full h-80 bg-gradient-to-br from-[#001f3f]/5 to-[#d4af37]/5 overflow-hidden">
+          <div className="relative w-full h-80 bg-gradient-to-br from-[#0a0a0a]/5 to-[#d4af37]/5 overflow-hidden">
             {product.image_url ? (
               <motion.img
                 src={product.image_url}
@@ -75,7 +75,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                 </span>
               )}
               {product.category && (
-                <span className="px-3 py-1 bg-[#001f3f] text-[#d4af37] text-xs font-semibold rounded-full capitalize">
+                <span className="px-3 py-1 bg-[#0a0a0a] text-[#d4af37] text-xs font-semibold rounded-full capitalize">
                   {product.category}
                 </span>
               )}
@@ -84,7 +84,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             {/* Viewers Badge */}
             <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-lg">
               <TrendingUp className="w-3 h-3 text-[#d4af37]" />
-              <span className="text-xs font-semibold text-[#001f3f]">
+              <span className="text-xs font-semibold text-[#0a0a0a]">
                 {viewers} viewing
               </span>
             </div>
@@ -96,7 +96,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                 opacity: isHovered ? 1 : 0,
                 y: isHovered ? 0 : 20,
               }}
-              className="absolute inset-0 bg-[#001f3f]/80 backdrop-blur-sm flex items-center justify-center gap-4"
+              className="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-sm flex items-center justify-center gap-4"
             >
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -105,7 +105,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                   e.preventDefault();
                   setShowQuickView(true);
                 }}
-                className="px-6 py-3 bg-[#d4af37] text-[#001f3f] rounded-lg font-semibold flex items-center gap-2 hover:bg-[#d4af37]/90 transition-colors shadow-lg"
+                className="px-6 py-3 bg-[#d4af37] text-[#0a0a0a] rounded-lg font-semibold flex items-center gap-2 hover:bg-[#d4af37]/90 transition-colors shadow-lg"
               >
                 <Eye className="w-5 h-5" />
                 Quick View
@@ -117,7 +117,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           <div className="p-6 space-y-4">
             <div>
               <h3
-                className="text-xl font-bold text-[#001f3f] mb-2 line-clamp-1"
+                className="text-xl font-bold text-[#0a0a0a] mb-2 line-clamp-1"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 {product.title}
@@ -146,7 +146,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleAddToCart}
-              className="w-full py-3 px-6 bg-gradient-to-r from-[#001f3f] to-[#001f3f] hover:from-[#d4af37] hover:to-[#d4af37] text-white hover:text-[#001f3f] rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+              className="w-full py-3 px-6 bg-gradient-to-r from-[#0a0a0a] to-[#0a0a0a] hover:from-[#d4af37] hover:to-[#d4af37] text-white hover:text-[#0a0a0a] rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
             >
               <ShoppingCart className="w-5 h-5" />
               Add to Cart

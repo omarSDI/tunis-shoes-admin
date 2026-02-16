@@ -45,7 +45,7 @@ export default function TrustSignals() {
             className="text-3xl md:text-4xl font-bold text-[#001f3f] mb-4"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
-            Why Choose TunisShoes?
+            Why Choose LuxeShopy?
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto"></div>
         </motion.div>

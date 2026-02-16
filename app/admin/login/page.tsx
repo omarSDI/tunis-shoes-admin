@@ -18,7 +18,7 @@ export default async function AdminLoginPage() {
         <div className="bg-white rounded-2xl border-2 border-[#d4af37]/20 p-8 shadow-2xl">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-[#001f3f]" style={{ fontFamily: 'Playfair Display, serif' }}>
-              TunisShoes
+              LuxeShopy
             </h1>
             <p className="mt-2 text-[#d4af37] uppercase tracking-widest text-sm font-semibold">
               Admin Portal

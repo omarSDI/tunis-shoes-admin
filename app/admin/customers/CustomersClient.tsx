@@ -76,7 +76,7 @@ export default function CustomersClient({ orders }: CustomersClientProps) {
         const ws = XLSX.utils.json_to_sheet(data);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Customers");
-        XLSX.writeFile(wb, "TunisShoes_Customers.xlsx");
+        XLSX.writeFile(wb, "LuxeShopy_Customers.xlsx");
     };
 
     return (

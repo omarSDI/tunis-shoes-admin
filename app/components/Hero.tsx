@@ -8,11 +8,11 @@ import { useLanguage } from '../context/LanguageContext';
 export default function Hero() {
   const { t } = useLanguage();
   return (
-    <section className="relative w-full bg-gradient-to-br from-[#001f3f] via-[#001f3f] to-[#003366] overflow-hidden">
+    <section className="relative w-full bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a] to-[#1a1a1a] overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#d4af37]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#f9c94d]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#f9c94d]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
@@ -50,7 +50,7 @@ export default function Hero() {
               >
                 <Link
                   href="/shop"
-                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#b8941e] text-[#001f3f] font-bold rounded-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300"
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#b8941e] text-[#0a0a0a] font-bold rounded-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300"
                 >
                   {t('shopNow')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -97,12 +97,12 @@ export default function Hero() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[#d4af37]/10 rounded-full"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[#f9c94d]/10 rounded-full"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-[#d4af37]/5 rounded-full"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-[#f9c94d]/5 rounded-full"
               />
             </div>
           </motion.div>
@@ -115,11 +115,11 @@ export default function Hero() {
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-[#d4af37]/50 rounded-full flex items-start justify-center p-2">
+        <div className="w-6 h-10 border-2 border-[#f9c94d]/50 rounded-full flex items-start justify-center p-2">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-[#d4af37] rounded-full"
+            className="w-1.5 h-1.5 bg-[#f9c94d] rounded-full"
           />
         </div>
       </motion.div>

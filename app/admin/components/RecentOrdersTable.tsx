@@ -68,14 +68,14 @@ export default function RecentOrdersTable({
       <div className="bg-white rounded-3xl border border-[#d4af37]/10 shadow-2xl overflow-hidden animate-fade-in relative">
         <div className="overflow-x-auto">
           <table className="w-full text-sm text-left">
-            <thead className="bg-[#001f3f]/5 text-xs text-gray-500 uppercase tracking-wider">
+            <thead className="bg-[#0a0a0a]/5 text-xs text-gray-500 uppercase tracking-wider">
               <tr>
-                <th className="px-6 py-5 font-bold text-[#001f3f] uppercase tracking-wider">Date</th>
-                <th className="px-6 py-5 font-bold text-[#001f3f] uppercase tracking-wider">Client</th>
-                <th className="px-6 py-5 font-bold text-[#001f3f] uppercase tracking-wider">Total</th>
-                <th className="px-6 py-5 font-bold text-[#001f3f] uppercase tracking-wider">Adresse</th>
-                <th className="px-6 py-5 font-bold text-[#001f3f] border-x border-gray-50 uppercase tracking-wider text-center">Actions</th>
-                <th className="px-6 py-5 font-bold text-[#001f3f] uppercase tracking-wider text-center">Paiement</th>
+                <th className="px-6 py-5 font-bold text-[#0a0a0a] uppercase tracking-wider">Date</th>
+                <th className="px-6 py-5 font-bold text-[#0a0a0a] uppercase tracking-wider">Client</th>
+                <th className="px-6 py-5 font-bold text-[#0a0a0a] uppercase tracking-wider">Total</th>
+                <th className="px-6 py-5 font-bold text-[#0a0a0a] uppercase tracking-wider">Adresse</th>
+                <th className="px-6 py-5 font-bold text-[#0a0a0a] border-x border-gray-50 uppercase tracking-wider text-center">Actions</th>
+                <th className="px-6 py-5 font-bold text-[#0a0a0a] uppercase tracking-wider text-center">Paiement</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
@@ -84,11 +84,11 @@ export default function RecentOrdersTable({
                   <td className="px-6 py-4 whitespace-nowrap text-gray-400 font-medium">
                     {new Date(order.created_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
                   </td>
-                  <td className="px-6 py-4 font-bold text-[#001f3f]">
+                  <td className="px-6 py-4 font-bold text-[#0a0a0a]">
                     {order.customer_name}
                     <div className="text-[10px] text-gray-400 font-medium mt-1">{order.phone}</div>
                   </td>
-                  <td className="px-6 py-4 font-extrabold text-[#001f3f]">
+                  <td className="px-6 py-4 font-extrabold text-[#0a0a0a]">
                     {Number(order.total_price).toFixed(2)} <span className="text-[10px] text-gray-400 ml-0.5">TND</span>
                   </td>
                   <td className="px-6 py-4 text-gray-500 text-xs font-medium max-w-[150px] truncate" title={order.address || ''}>
@@ -113,7 +113,7 @@ export default function RecentOrdersTable({
                       </select>
                       <button
                         onClick={() => handleViewDetails(order)}
-                        className="p-1.5 bg-[#001f3f]/5 text-[#001f3f] rounded-lg hover:bg-[#d4af37]/20 hover:text-[#001f3f] transition-all border border-transparent hover:border-[#d4af37]/30"
+                        className="p-1.5 bg-[#0a0a0a]/5 text-[#0a0a0a] rounded-lg hover:bg-[#d4af37]/20 hover:text-[#0a0a0a] transition-all border border-transparent hover:border-[#d4af37]/30"
                         title="Voir détails"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

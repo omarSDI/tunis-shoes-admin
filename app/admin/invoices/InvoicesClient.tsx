@@ -29,13 +29,13 @@ export default function InvoicesClient({ orders }: InvoicesClientProps) {
         const doc = new jsPDF();
 
         // Brand Header (Mock Logo)
-        doc.setFillColor(0, 31, 63); // Navy Blue
+        doc.setFillColor(17, 24, 39); // Luxe Navy
         doc.rect(0, 0, 210, 40, 'F');
 
-        doc.setTextColor(212, 175, 55); // Gold
+        doc.setTextColor(249, 201, 77); // Luxe Gold
         doc.setFontSize(24);
         doc.setFont('helvetica', 'bold');
-        doc.text('TunisShoes', 105, 20, { align: 'center' });
+        doc.text('LuxeShopy', 105, 20, { align: 'center' });
 
         doc.setTextColor(255, 255, 255);
         doc.setFontSize(10);
@@ -68,7 +68,7 @@ export default function InvoicesClient({ orders }: InvoicesClientProps) {
             startY: 90,
             head: [[t('items'), t('quantity'), t('unitPrice'), t('amount')]],
             body: tableBody,
-            headStyles: { fillColor: [0, 31, 63], textColor: [255, 255, 255] },
+            headStyles: { fillColor: [10, 10, 10], textColor: [255, 255, 255] },
             alternateRowStyles: { fillColor: [245, 245, 245] },
             margin: { top: 90 },
         });
@@ -83,7 +83,7 @@ export default function InvoicesClient({ orders }: InvoicesClientProps) {
         doc.setFontSize(8);
         doc.setFont('helvetica', 'italic');
         doc.setTextColor(150);
-        doc.text('Thank you for choosing TunisShoes. Experience Excellence.', 105, 280, { align: 'center' });
+        doc.text('Thank you for choosing LuxeShopy. Experience Excellence.', 105, 280, { align: 'center' });
 
         doc.save(`Invoice_${order.id.slice(0, 8)}.pdf`);
     };

@@ -6,6 +6,7 @@ export const translations = {
         shop: 'Shop',
         men: 'Men',
         women: 'Women',
+        contact: 'Contact',
         search: 'Search',
         cart: 'Cart',
 
@@ -120,6 +121,16 @@ export const translations = {
         quantity: 'Quantity',
         unitPrice: 'Unit Price',
         amount: 'Amount',
+
+        // Contact
+        contactUs: 'Contact Us',
+        name: 'Name',
+        email: 'Email',
+        message: 'Message',
+        send: 'Send',
+        sending: 'Sending...',
+        success: 'Message sent successfully!',
+        error: 'Error sending message.',
     },
     fr: {
         // Navbar
@@ -256,7 +267,7 @@ export const translations = {
         // Hero
         heroTitle: 'ارفع مستوى',
         heroReview: 'خطواتك',
-        heroSubtitle: 'اكتشف أحذية عالية الجودة مصممة للأناقة والراحة. تميز مع تونس شوز.',
+        heroSubtitle: 'اكتشف أحذية عالية الجودة مصممة للأناقة والراحة. تميز مع لوكس شوبي.',
         shopNow: 'تسوق الآن',
         exploreCollection: 'استكشف المجموعة',
         premiumFootwear: 'أحذية فاخرة',

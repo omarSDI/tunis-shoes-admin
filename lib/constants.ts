@@ -1,4 +1,4 @@
-export const ADMIN_COOKIE_NAME = 'tunisshoes_admin';
+export const ADMIN_COOKIE_NAME = 'luxeshopy_admin';
 
 export function isValidAdminToken(token: string | undefined | null): boolean {
     if (!token) return false;

@@ -6,24 +6,29 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TunisShoes | Luxury Footwear & Premium Sneakers",
-  description: "Experience excellence with TunisShoes. Discover our curated collection of luxury footwear, designer sneakers, and timeless classics. Premium quality, exceptional style.",
-  keywords: ["shoes", "luxury", "footwear", "tunis", "fashion", "sneakers"],
+  title: "LuxeShopy | Luxury Footwear & Premium Sneakers",
+  description: "Experience excellence with LuxeShopy. Discover our curated collection of luxury footwear, designer sneakers, and timeless classics. Premium quality, exceptional style.",
+  keywords: ["shoes", "luxury", "footwear", "luxeshopy", "fashion", "sneakers"],
   openGraph: {
-    title: "TunisShoes - Luxury Footwear Collection",
+    title: "LuxeShopy - Luxury Footwear Collection",
     description: "Premium quality footwear designed for style and comfort.",
-    url: "https://tunisshoes.com",
-    siteName: "TunisShoes",
+    url: "https://luxeshopy.tn",
+    siteName: "LuxeShopy",
     images: [
       {
         url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200",
         width: 1200,
         height: 630,
-        alt: "TunisShoes Luxury Collection",
+        alt: "LuxeShopy Luxury Collection",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
   },
 };
 
@@ -43,9 +48,9 @@ export default function RootLayout({
               richColors
               toastOptions={{
                 style: {
-                  background: '#001f3f',
+                  background: '#111827',
                   color: '#fff',
-                  border: '1px solid #d4af37',
+                  border: '1px solid #f9c94d',
                 },
               }}
             />

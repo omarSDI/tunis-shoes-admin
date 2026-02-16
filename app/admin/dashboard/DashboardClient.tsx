@@ -188,7 +188,7 @@ export default function DashboardClient({ stats: initialStats, chartData: initia
                     >
                         {t('allOrders')}
                     </h2>
-                    <span className="px-4 py-2 bg-[#001f3f] text-white rounded-full text-xs font-bold">
+                    <span className="px-4 py-2 bg-[#0a0a0a] text-white rounded-full text-xs font-bold">
                         {orders.length} TOTAL
                     </span>
                 </div>

@@ -15,7 +15,7 @@ export default function NotificationBell() {
         const orders = await getAllOrders();
         const pending = orders.filter((o) => o.status === 'pending').length;
         setPendingCount(pending);
-        
+
         // Pulse animation if there are new pending orders
         if (pending > 0) {
           setIsPulsing(true);
@@ -45,9 +45,8 @@ export default function NotificationBell() {
             <motion.span
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white ${
-                isPulsing ? 'animate-pulse-gold' : ''
-              }`}
+              className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white ${isPulsing ? 'animate-pulse' : ''
+                }`}
             >
               {pendingCount > 9 ? '9+' : pendingCount}
             </motion.span>

@@ -31,7 +31,7 @@ export default function StatsCard({
     switch (variant) {
       case 'warning': return 'bg-yellow-100 text-yellow-600';
       case 'success': return 'bg-emerald-100 text-emerald-600';
-      default: return 'bg-[#001f3f]/5 text-[#001f3f]';
+      default: return 'bg-[#0a0a0a]/5 text-[#0a0a0a]';
     }
   };
 
@@ -65,7 +65,7 @@ export default function StatsCard({
           </p>
           <div className="flex flex-col">
             <p
-              className="text-4xl font-extrabold text-[#001f3f]"
+              className="text-4xl font-extrabold text-[#0a0a0a]"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               {value}
